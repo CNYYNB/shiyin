@@ -1,0 +1,12 @@
+/version.json
+  Cache-Control: no-cache
+  Content-Type: application/json; charset=utf-8
+/*.apk
+  Content-Type: application/vnd.android.package-archive
+/pc-version.json
+  Cache-Control: no-cache
+  Content-Type: application/json; charset=utf-8
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>拾音</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>try{if(JSON.parse(Android.kvGet('theme'))==='light'){document.body.classList.add('light');document.querySelector('meta[name="color-scheme"]').setAttribute('content','light')}}catch(e){}</script>
+<div id="app">
+  <!-- 权限页 -->
+  <section id="permPage" class="page hidden">
+    <div class="perm">
+      <div class="perm-icon">♪</div>
+      <h2>欢迎使用拾音</h2>
+      <p id="permText">需要读取手机里的音乐文件（FLAC、MP3 等），才能为你建立音乐库。所有内容只在本机使用。</p>
+      <button class="btn primary" id="permBtn">授予权限并扫描音乐</button>
+      <button class="btn ghost" id="permSettingsBtn">打开应用设置</button>
+    </div>
+  </section>
+
+  <!-- 主界面 -->
+  <section id="mainPage" class="page">
+    <header class="topbar">
+      <h1>拾音</h1>
+      <div class="top-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="搜索"><svg viewBox="0 0 24 24"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.05l4.5 4.5-1.41 1.41-4.5-4.5A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z"/></svg></button>
+        <button class="icon-btn" id="settingsBtn" aria-label="设置"><svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-1.6-8h3.2l.5 2.6c.6.2 1.2.5 1.7.9l2.5-.9 1.6 2.8-2 1.7a7 7 0 0 1 0 1.9l2 1.7-1.6 2.8-2.5-.9c-.5.4-1.1.7-1.7.9l-.5 2.6h-3.2l-.5-2.6c-.6-.2-1.2-.5-1.7-.9l-2.5.9-1.6-2.8 2-1.7a7 7 0 0 1 0-1.9l-2-1.7L5.7 3.6l2.5.9c.5-.4 1.1-.7 1.7-.9z"/></svg></button>
+      </div>
+    </header>
+    <nav class="tabs" id="tabs">
+      <button data-tab="songs" class="active">歌曲</button>
+      <button data-tab="albums">专辑</button>
+      <button data-tab="artists">歌手</button>
+      <button data-tab="playlists">歌单</button>
+    </nav>
+    <div class="tab-body">
+      <div class="tab-pane" id="pane-songs">
+        <div class="list-tools">
+          <button class="chip accent" id="playAllBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>播放全部</button>
+          <button class="chip" id="shuffleAllBtn"><svg viewBox="0 0 24 24"><path d="M17 3l4 4-4 4V8h-2.6l-3 3.8-1.3-1.6L13.4 6H17zM3 6h4.6l9 11H17v-3l4 4-4 4v-3h-1.4L6.6 8H3zm0 10h3.6l2-2.5 1.3 1.6L7.6 18H3z"/></svg>随机播放</button>
+          <span class="count" id="songCount"></span>
+          <button class="chip" id="sortBtn"><svg viewBox="0 0 24 24"><path d="M3 6h12v2H3zm0 5h9v2H3zm0 5h6v2H3zm14-8h2v8h3l-4 4-4-4h3z"/></svg><span id="sortLabel">标题</span></button>
+        </div>
+        <div class="vscroll" id="songScroll"><div class="vspacer" id="songSpacer"></div></div>
+      </div>
+      <div class="tab-pane hidden" id="pane-albums"><div class="scroll" id="albumScroll"><div class="grid" id="albumGrid"></div></div></div>
+      <div class="tab-pane hidden" id="pane-artists"><div class="scroll" id="artistScroll"><div id="artistList"></div></div></div>
+      <div class="tab-pane hidden" id="pane-playlists"><div class="scroll" id="playlistScroll">
+        <div class="list-tools"><button class="chip" id="newPlaylistBtn">＋ 新建歌单</button></div>
+        <div id="playlistList"></div></div></div>
+    </div>
+    <div class="empty hidden" id="emptyState"></div>
+    <div class="scan-banner task-banner hidden" id="taskBanner"><span class="spinner"></span><span id="taskText">正在识别…</span><button class="chip" id="taskCancel">停止</button></div>
+    <div class="scan-banner hidden" id="scanBanner"><span class="spinner"></span><span id="scanText">正在扫描…</span></div>
+    <div class="upd-banner hidden" id="updBanner"><span class="dot"></span><span class="txt" id="updBannerText">有新版本</span><span class="go">查看</span><button class="x" id="updBannerClose" aria-label="关闭">✕</button></div>
+  </section>
+
+  <!-- 详情页（专辑/歌手/歌单） -->
+  <section id="detailPage" class="page overlay hidden">
+    <header class="topbar">
+      <button class="icon-btn" id="detailBack" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15.4 4.6 8 12l7.4 7.4-1.4 1.4L5.2 12 14 3.2z"/></svg></button>
+      <h2 class="detail-title" id="detailTitle"></h2>
+      <button class="icon-btn" id="detailMore" aria-label="更多"><svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></button>
+    </header>
+    <div class="detail-head" id="detailHead"></div>
+    <div class="vscroll" id="detailScroll"><div class="vspacer" id="detailSpacer"></div></div>
+  </section>
+
+  <!-- 搜索页 -->
+  <section id="searchPage" class="page overlay hidden">
+    <header class="topbar search-bar">
+      <button class="icon-btn" id="searchBack" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15.4 4.6 8 12l7.4 7.4-1.4 1.4L5.2 12 14 3.2z"/></svg></button>
+      <input id="searchInput" type="search" placeholder="搜索歌曲、歌手、专辑" autocomplete="off">
+    </header>
+    <div class="scroll" id="searchResults"></div>
+  </section>
+
+  <!-- 设置页 -->
+  <section id="settingsPage" class="page overlay hidden">
+    <header class="topbar">
+      <button class="icon-btn" id="settingsBack" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15.4 4.6 8 12l7.4 7.4-1.4 1.4L5.2 12 14 3.2z"/></svg></button>
+      <h2 class="detail-title">设置</h2><span></span>
+    </header>
+    <div class="scroll" id="settingsBody"></div>
+  </section>
+
+  <!-- 正在播放 -->
+  <section id="nowPage" class="now hidden">
+    <div class="now-bg" id="nowBg"></div>
+    <header class="topbar now-top">
+      <button class="icon-btn" id="nowClose" aria-label="收起"><svg viewBox="0 0 24 24"><path d="M4.6 8.6 12 16l7.4-7.4 1.4 1.4L12 18.8 3.2 10z"/></svg></button>
+      <div class="now-switch"><button id="swCover" class="active">封面</button><button id="swLyrics">歌词</button></div>
+      <button class="icon-btn" id="nowQueue" aria-label="播放队列"><svg viewBox="0 0 24 24"><path d="M3 5h14v2H3zm0 4h14v2H3zm0 4h9v2H3zm13 0 6 4-6 4z"/></svg></button>
+    </header>
+    <div class="now-main">
+      <div class="now-cover-view" id="coverView">
+        <div class="now-cover" id="nowCover"></div>
+        <div class="now-lyric-peek" id="lyricPeek"></div>
+      </div>
+      <div class="now-lyrics-view hidden" id="lyricsView">
+        <div class="lyrics" id="lyricsBox"></div>
+        <div class="lyric-tools">
+          <button class="chip small" id="offMinus">-0.5s</button>
+          <span class="off-label" id="offLabel">偏移 0.0s</span>
+          <button class="chip small" id="offPlus">+0.5s</button>
+          <span class="lyric-src" id="lyricSrc"></span>
+          <button class="chip small" id="lyricSearchBtn">搜索歌词</button>
+        </div>
+      </div>
+    </div>
+    <div class="now-info">
+      <div class="now-text">
+        <div class="now-title" id="nowTitle">未在播放</div>
+        <div class="now-artist" id="nowArtist"></div>
+      </div>
+      <button class="icon-btn fav" id="favBtn" aria-label="我喜欢"><svg viewBox="0 0 24 24"><path d="M12 21l-1.4-1.3C5.4 15 2 12 2 8.4 2 5.4 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.4 22 8.4c0 3.6-3.4 6.6-8.6 11.3z"/></svg></button>
+    </div>
+    <div class="seek">
+      <input type="range" id="seekBar" min="0" max="1000" value="0">
+      <div class="times"><span id="tCur">0:00</span><span id="tDur">0:00</span></div>
+    </div>
+    <div class="controls">
+      <button class="icon-btn" id="modeBtn" aria-label="播放模式"></button>
+      <button class="icon-btn big" id="prevBtn" aria-label="上一首"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zm3.5 7L19 5v14z"/></svg></button>
+      <button class="play-btn" id="playBtn" aria-label="播放/暂停"></button>
+      <button class="icon-btn big" id="nextBtn" aria-label="下一首"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zm-1.5 7L5 19V5z"/></svg></button>
+      <button class="icon-btn" id="nowMore" aria-label="更多"><svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></button>
+    </div>
+  </section>
+
+  <!-- 迷你播放条 -->
+  <div class="mini hidden" id="mini">
+    <div class="mini-progress" id="miniProg"></div>
+    <div class="mini-cover" id="miniCover"></div>
+    <div class="mini-text"><div class="mini-title" id="miniTitle"></div><div class="mini-artist" id="miniArtist"></div></div>
+    <button class="icon-btn" id="miniPlay" aria-label="播放/暂停"></button>
+    <button class="icon-btn" id="miniNext" aria-label="下一首"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zm-1.5 7L5 19V5z"/></svg></button>
+  </div>
+
+  <!-- 底部弹出菜单 / 对话框 -->
+  <div class="sheet-mask hidden" id="sheetMask"></div>
+  <div class="sheet hidden" id="sheet"></div>
+</div>
+<div class="toast hidden" id="toast"></div>
+<script src="t2s.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

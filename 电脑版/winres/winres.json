@@ -1,0 +1,46 @@
+{
+  "RT_GROUP_ICON": {
+    "#1": { "0000": "icon.ico" }
+  },
+  "RT_MANIFEST": {
+    "#1": {
+      "0409": {
+        "identity": { "name": "Louis.Shiyin", "version": "0.3.0.0" },
+        "description": "拾音",
+        "minimum-os": "win10",
+        "execution-level": "as invoker",
+        "ui-access": false,
+        "auto-elevate": false,
+        "dpi-awareness": "system",
+        "disable-theming": false,
+        "disable-window-filtering": false,
+        "high-resolution-scrolling-aware": false,
+        "ultra-high-resolution-scrolling-aware": false,
+        "long-path-aware": true,
+        "printer-driver-isolation": false,
+        "gdi-scaling": false,
+        "segment-heap": false,
+        "use-common-controls-v6": true
+      }
+    }
+  },
+  "RT_VERSION": {
+    "#1": {
+      "0000": {
+        "fixed": { "file_version": "0.3.0.0", "product_version": "0.3.0.0" },
+        "info": {
+          "0804": {
+            "CompanyName": "Louis",
+            "FileDescription": "拾音",
+            "FileVersion": "0.3.0",
+            "InternalName": "Shiyin",
+            "LegalCopyright": "© 2026 Louis",
+            "OriginalFilename": "Shiyin.exe",
+            "ProductName": "拾音",
+            "ProductVersion": "0.3.0"
+          }
+        }
+      }
+    }
+  }
+}

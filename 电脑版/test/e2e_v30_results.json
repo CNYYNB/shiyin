@@ -1,0 +1,117 @@
+[
+ [
+  "np-port.txt written",
+  true,
+  "/tmp/shiyin-np/np-port.txt"
+ ],
+ [
+  "np before playing",
+  true,
+  {
+   "album": "",
+   "app": "shiyin",
+   "artist": "",
+   "at": 1795293319047,
+   "dur": 0,
+   "playing": false,
+   "pos": 0,
+   "ready": true,
+   "title": "",
+   "version": "0.3.0"
+  }
+ ],
+ [
+  "np follows the player",
+  true,
+  {
+   "album": "未知专辑",
+   "app": "shiyin",
+   "artist": "未知歌手",
+   "at": 1795293319147,
+   "dur": 12,
+   "playing": true,
+   "pos": 0.02023601,
+   "ready": true,
+   "title": "wavfile",
+   "version": "0.3.0"
+  }
+ ],
+ [
+  "pos advances",
+  true,
+  [
+   0.02023601,
+   1.1276003540000001
+  ]
+ ],
+ [
+  "ctl pause",
+  true,
+  ""
+ ],
+ [
+  "np paused",
+  true,
+  ""
+ ],
+ [
+  "pause is idempotent",
+  true,
+  ""
+ ],
+ [
+  "ctl play",
+  true,
+  ""
+ ],
+ [
+  "play is idempotent",
+  true,
+  ""
+ ],
+ [
+  "ctl toggle → paused",
+  true,
+  ""
+ ],
+ [
+  "ctl toggle → playing",
+  true,
+  ""
+ ],
+ [
+  "ctl next",
+  true,
+  ""
+ ],
+ [
+  "np has the next song",
+  true,
+  "晴天"
+ ],
+ [
+  "ctl prev",
+  true,
+  ""
+ ],
+ [
+  "cross-origin page cannot pause",
+  true,
+  "err"
+ ],
+ [
+  "cross-origin page cannot read",
+  true,
+  "blocked"
+ ],
+ [
+  "desk lyrics still off",
+  true,
+  ""
+ ],
+ [
+  "no page errors",
+  true,
+  []
+ ]
+]

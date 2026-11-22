@@ -1,0 +1,21 @@
+{
+ "lyricOffsets": {},
+ "sort": {
+  "sort": "title",
+  "dir": 1
+ },
+ "updPrompt": {
+  "v": "9.9.9",
+  "at": 1795182913484
+ },
+ "updateCheck": {
+  "at": 1795182917554,
+  "info": {
+   "version": "9.9.9",
+   "setup": "shiyin-pc-setup-9.9.9.exe",
+   "size": 3145728,
+   "sha256": "4008299ab23b06b41c5b1189ca43ef29f451f1e1dc1e5400c27b2771aa1aa76b",
+   "notes": "测试更新说明：新增主题、内置更新\n第二行说明"
+  }
+ }
+}

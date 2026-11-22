@@ -1,0 +1,212 @@
+[
+ {
+  "name": "词 button in player bar",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "off by default",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "click 词 → on (highlighted)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "on saved in prefs.json deskLyrics",
+  "ok": true,
+  "info": "{'on': True, 'locked': False, 'size': 36, 'color': 'rose', 'pos': False, 'x': 0, 'y': 0, 'w': 0}"
+ },
+ {
+  "name": "window told to show (desk apply on=true)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "desk shows the main window's current line",
+  "ok": true,
+  "info": "['第二行歌词', '第二行歌词']"
+ },
+ {
+  "name": "desk lines == main parsed lyrics (same t2s/parse)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "page transparent (no body background)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "toolbar hidden when not hovered",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "lyric offset follows the main window",
+  "ok": true,
+  "info": "500"
+ },
+ {
+  "name": "hover shows toolbar",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "toolbar 播放/暂停 pauses the main player",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "desk knows it is paused",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "toolbar 播放/暂停 resumes",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "toolbar 下一首 → main switches song",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "toolbar 上一首 → back",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "字号 + saved (40)",
+  "ok": true,
+  "info": "{'on': True, 'locked': False, 'size': 40, 'color': 'rose', 'pos': False, 'x': 0, 'y': 0, 'w': 0}"
+ },
+ {
+  "name": "字号 − saved (36)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "颜色 preset saved + applied",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "long line shrinks to fit the window",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "two rows do not overlap and fit the height",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "锁定 saved, toolbar hidden",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "window told locked",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "main 词 shows locked",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "locked, cursor away: unlock pill hidden",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "deskLockHover(true) (window: cursor over lyrics) → pill shown",
+  "ok": true,
+  "info": "1"
+ },
+ {
+  "name": "pill is lock icon only + hotkey in tooltip",
+  "ok": true,
+  "info": "解锁桌面歌词（快捷键 Ctrl+Alt+L）"
+ },
+ {
+  "name": "pill = deskPillDef (top-centre, inside the toolbar strip, above the lyrics)",
+  "ok": true,
+  "info": "[425, 4, 455, 32]"
+ },
+ {
+  "name": "toolbar stays hidden while locked",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "deskLockHover(false) → pill hidden again",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "click pill → unlocked + toolbar back",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "window told unlocked",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "pill gone after unlock",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "Ctrl+Alt+L (toggleLock) → locked",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "snapshot carries hotkey",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "main 词 click unlocks (stays on)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "设置 has 桌面歌词 switch (on)",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "设置 → 歌词 shows 快捷键 Ctrl+Alt+L 锁定/解锁",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "关闭 from desk → off in prefs + main button",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "window told to hide",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "re-open keeps size/color",
+  "ok": true,
+  "info": ""
+ },
+ {
+  "name": "no JS errors",
+  "ok": true,
+  "info": "[]"
+ }
+]

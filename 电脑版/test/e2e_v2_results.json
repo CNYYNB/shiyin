@@ -1,0 +1,578 @@
+[
+ [
+  "8 songs",
+  true,
+  8
+ ],
+ [
+  "settings order mirrors phone (音乐库)",
+  true,
+  [
+   "重新扫描",
+   "添加文件夹",
+   "整理到拾音文件夹",
+   "扫描后自动整理新歌",
+   "识别中文歌名"
+  ]
+ ],
+ [
+  "settings has 主题 / 检查更新 / 清除封面缓存",
+  true,
+  ""
+ ],
+ [
+  "about shows version 0.2.5",
+  true,
+  [
+   "拾音 电脑版 0.2.5"
+  ]
+ ],
+ [
+  "浅色 applied instantly",
+  true,
+  ""
+ ],
+ [
+  "light = white bg, black text",
+  true,
+  [
+   "rgb(255, 255, 255)",
+   "rgb(0, 0, 0)"
+  ]
+ ],
+ [
+  "浅色 remembered in config",
+  true,
+  ""
+ ],
+ [
+  "title bar told light",
+  true,
+  ""
+ ],
+ [
+  "light kept after restart (server-injected, no flash)",
+  true,
+  ""
+ ],
+ [
+  "跟随系统 + system dark → dark",
+  true,
+  ""
+ ],
+ [
+  "跟随系统 follows system switching to light live",
+  true,
+  ""
+ ],
+ [
+  "深色 again",
+  true,
+  ""
+ ],
+ [
+  "title bar told dark",
+  true,
+  ""
+ ],
+ [
+  "sort by 时长",
+  true,
+  [
+   "0:09",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:15"
+  ]
+ ],
+ [
+  "倒序",
+  true,
+  [
+   "0:15",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:12",
+   "0:09"
+  ]
+ ],
+ [
+  "sort remembered",
+  true,
+  ""
+ ],
+ [
+  "song menu = phone entries in phone order",
+  true,
+  [
+   "下一首播放",
+   "添加到播放队列",
+   "添加到歌单",
+   "查看专辑",
+   "查看歌手",
+   "编辑歌名 / 歌手 / 专辑",
+   "更换封面",
+   "歌曲信息",
+   "在文件夹中显示"
+  ]
+ ],
+ [
+  "menu shows album hint",
+  true,
+  "叶惠美"
+ ],
+ [
+  "查看专辑 opens album",
+  true,
+  ""
+ ],
+ [
+  "⋮ button opens the same menu",
+  true,
+  ""
+ ],
+ [
+  "查看歌手 opens artist",
+  true,
+  ""
+ ],
+ [
+  "歌曲信息 has path/format/size/bitrate",
+  true,
+  "标题\t晴天 歌手\t周杰伦 专辑\t叶惠美 时长\t0:12 音轨\t- 格式\tMP3 大小\t201 KB 码率\t约 137 kbps（平均） 文件名\tqingtian.mp3 位置\t/workspace/work/shiyin/拾音源码/电脑版/test/pc/qingtian.mp3"
+ ],
+ [
+  "下一首播放 puts it after current",
+  true,
+  [
+   "晴天",
+   "作品",
+   "Clash",
+   "Song M4A",
+   "Ten Years",
+   "Test Flac",
+   "Vorbis Song",
+   "wavfile"
+  ]
+ ],
+ [
+  "queue panel lists queue",
+  true,
+  8
+ ],
+ [
+  "current highlighted",
+  true,
+  "晴天"
+ ],
+ [
+  "remove from queue",
+  true,
+  [
+   "晴天",
+   "作品",
+   "Clash",
+   "Ten Years",
+   "Test Flac",
+   "Vorbis Song",
+   "wavfile"
+  ]
+ ],
+ [
+  "drag to reorder",
+  true,
+  [
+   "晴天",
+   "wavfile",
+   "作品",
+   "Clash",
+   "Ten Years",
+   "Test Flac",
+   "Vorbis Song"
+  ]
+ ],
+ [
+  "添加到播放队列 appends",
+  true,
+  [
+   "晴天",
+   "作品",
+   "Clash",
+   "Ten Years",
+   "Test Flac",
+   "Vorbis Song",
+   "wavfile"
+  ]
+ ],
+ [
+  "click queue row plays it",
+  true,
+  "Clash"
+ ],
+ [
+  "清空 stops and empties",
+  true,
+  ""
+ ],
+ [
+  "待识别 counts non-Chinese songs only",
+  true,
+  "英文歌名/歌手名的华语歌，联网找到对应的中文名和封面（不修改文件）。待识别 6 首"
+ ],
+ [
+  "progress banner with stop",
+  true,
+  ""
+ ],
+ [
+  "batch result toast",
+  true,
+  "识别完成：3 首改成了中文名，3 首没找到（可在歌曲菜单里手动改）"
+ ],
+ [
+  "Chinese names applied + 繁→简",
+  true,
+  [
+   "测试弗拉克 | 乐队甲",
+   "歌曲甲 | 歌手乙",
+   "晴天 | 周杰伦",
+   "十年 | 陈奕迅",
+   "作品 | 歌手丙",
+   "Clash | 未知歌手",
+   "Vorbis Song | 未知歌手",
+   "wavfile | 未知歌手"
+  ]
+ ],
+ [
+  "live version not chosen",
+  true,
+  ""
+ ],
+ [
+  "album name too",
+  true,
+  "黑白灰"
+ ],
+ [
+  "missing cover filled from Apple",
+  true,
+  true
+ ],
+ [
+  "nothing left to identify",
+  true,
+  "英文歌名/歌手名的华语歌，联网找到对应的中文名和封面（不修改文件）。待识别 0 首"
+ ],
+ [
+  "again → 没有需要识别的歌曲",
+  true,
+  ""
+ ],
+ [
+  "撤销自动识别 visible",
+  true,
+  ""
+ ],
+ [
+  "撤销 restores 3",
+  true,
+  "已恢复 3 首"
+ ],
+ [
+  "names back to file tags",
+  true,
+  [
+   "晴天 | 周杰伦",
+   "作品 | 歌手丙",
+   "Clash | 未知歌手",
+   "Song M4A | Artist B",
+   "Ten Years | Eason",
+   "Test Flac | Band A",
+   "Vorbis Song | 未知歌手",
+   "wavfile | 未知歌手"
+  ]
+ ],
+ [
+  "stop works",
+  true,
+  "已停止：识别了 1 首"
+ ],
+ [
+  "联网识别 shows candidates (simplified)",
+  true,
+  "歌曲甲最匹配\n歌手乙 · 专辑乙 · 0:12（+0s）\n点一个结果填入上面，再点「保存」"
+ ],
+ [
+  "candidate fills fields",
+  true,
+  ""
+ ],
+ [
+  "同步 checkbox present",
+  true,
+  ""
+ ],
+ [
+  "edit saved",
+  true,
+  ""
+ ],
+ [
+  "manual edit stored as manual",
+  true,
+  {
+   "artist b - song m4a|147451": {
+    "title": "歌曲甲",
+    "artist": "歌手乙",
+    "album": "专辑乙",
+    "cover": "user_7367d886cda39d06.jpg",
+    "coverV": 1795183813647,
+    "src": "manual"
+   },
+   "eason - ten years|361786": {
+    "cover": "user_1a6b84b9b46bcdb5.jpg",
+    "coverV": 1795183813751
+   },
+   "flac1|152233": {
+    "cover": "user_9b4eb44168fc59e2.jpg",
+    "coverV": 1795183813788
+   }
+  }
+ ],
+ [
+  "在线查找封面 sets cover",
+  true,
+  "url(\"/api/cover?id=f1fbe96c62fbe20a&v=1795183818507-1795183801-0\")"
+ ],
+ [
+  "恢复默认封面 offered",
+  true,
+  ""
+ ],
+ [
+  "恢复默认封面",
+  true,
+  ""
+ ],
+ [
+  "lyrics search lists results (synced first)",
+  true,
+  "wavfile滚动LRCLIB\n测试 · 测试专辑 · 0:12（+0s）\n手动第一行 / 手动第二行 / 手动第三行\nwavfile (plain)纯文本LRCLIB\n测试 · 0:30（+18s）"
+ ],
+ [
+  "picked lyrics shown",
+  true,
+  "歌词来源：手动选择"
+ ],
+ [
+  "picked lyrics saved (wins over .lrc)",
+  true,
+  "歌词来源：手动选择"
+ ],
+ [
+  "offset +1.0s",
+  true,
+  "偏移 +1.0s"
+ ],
+ [
+  "offset remembered per song",
+  true,
+  {
+   "wavfile|1058478": 1000
+  }
+ ],
+ [
+  "清除偏移",
+  true,
+  ""
+ ],
+ [
+  "恢复自动匹配 → back to .lrc",
+  true,
+  "歌词来源：本地 .lrc 歌词"
+ ],
+ [
+  "歌单 created with song",
+  true,
+  ""
+ ],
+ [
+  "playlist menu like phone",
+  true,
+  "重命名\n移除已不存在的歌曲\n删除歌单"
+ ],
+ [
+  "移除已不存在的歌曲",
+  true,
+  "已清理 1 首"
+ ],
+ [
+  "rename",
+  true,
+  ""
+ ],
+ [
+  "从此歌单移除 in playlist menu",
+  true,
+  ""
+ ],
+ [
+  "removed from playlist",
+  true,
+  ""
+ ],
+ [
+  "delete playlist",
+  true,
+  ""
+ ],
+ [
+  "extra folder scanned",
+  true,
+  [
+   10,
+   2
+  ]
+ ],
+ [
+  "整理 row shows count",
+  true,
+  "把歌曲和同名歌词文件移到 /workspace/work/shiyin/拾音源码/电脑版/test/pc，方便管理。还有 2 首不在里面"
+ ],
+ [
+  "整理完成 toast",
+  true,
+  "整理完成：已移入 2 首"
+ ],
+ [
+  "moved with \" (n)\" on clash + .lrc",
+  true,
+  [
+   "Artist B - Song M4A.m4a",
+   "Clash.mp3",
+   "Eason - Ten Years.mp3",
+   "Extra Song.lrc",
+   "Extra Song.mp3",
+   "flac1.flac",
+   "qingtian.mp3",
+   "vorbis (2).ogg",
+   "vorbis.ogg",
+   "wavfile.lrc",
+   "wavfile.wav",
+   "歌手丙 - 作品.opus"
+  ]
+ ],
+ [
+  "extra folder emptied of songs",
+  true,
+  []
+ ],
+ [
+  "playback continues after move",
+  true,
+  [
+   "Extra Song",
+   5.071478
+  ]
+ ],
+ [
+  "扫描后自动整理 turned on",
+  true,
+  ""
+ ],
+ [
+  "outside now 0",
+  true,
+  ""
+ ],
+ [
+  "扫描后自动整理新歌",
+  true,
+  "新歌已整理：已移入 1 首"
+ ],
+ [
+  "network error handled",
+  true,
+  " · 检查失败：服务器返回 HTTP 503"
+ ],
+ [
+  "up to date",
+  true,
+  ""
+ ],
+ [
+  "update dialog with notes",
+  true,
+  ""
+ ],
+ [
+  "立即更新 / 稍后",
+  true,
+  "稍后\n立即更新"
+ ],
+ [
+  "download progress shown",
+  true,
+  "正在下载 29% · 0.9 MB / 3.0 MB"
+ ],
+ [
+  "sha256 mismatch rejected",
+  true,
+  "安装包校验失败（SHA-256 不一致），已删除，请重试"
+ ],
+ [
+  "重试 offered",
+  true,
+  ""
+ ],
+ [
+  "launch check shows dialog",
+  true,
+  ""
+ ],
+ [
+  "settings dot",
+  true,
+  ""
+ ],
+ [
+  "launch check at most once a day (cached, no prompt again)",
+  true,
+  [
+   6,
+   6
+  ]
+ ],
+ [
+  "settings shows 有新版本",
+  true,
+  "有新版本 9.9.9"
+ ],
+ [
+  "no JS errors",
+  true,
+  []
+ ],
+ [
+  "verified installer launched",
+  true,
+  "4008299ab23b06b41c5b1189ca43ef29f451f1e1dc1e5400c27b2771aa1aa76b  /tmp/ShiyinUpdate/shiyin-pc-setup-9.9.9.exe\n"
+ ],
+ [
+  "app quits for the installer",
+  true,
+  ""
+ ],
+ [
+  "state saved before quitting",
+  true,
+  ""
+ ]
+]

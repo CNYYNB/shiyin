@@ -1,0 +1,263 @@
+[
+ [
+  "initial library 8 tracks",
+  true,
+  8
+ ],
+ [
+  "reverse port closed before dialog",
+  true,
+  ""
+ ],
+ [
+  "PC shows 6-digit code",
+  true,
+  "282734"
+ ],
+ [
+  "PC shows LAN IPs without TUN/link-local",
+  true,
+  "172.16.13.65 有线"
+ ],
+ [
+  "firewall hint shown",
+  true,
+  ""
+ ],
+ [
+  "reverse TCP 18522 listening while dialog open",
+  true,
+  ""
+ ],
+ [
+  "0.2.3 guide: AP isolation order (phone hotspot → USB → router → PC hotspot 不推荐)",
+  true,
+  [
+   39,
+   206,
+   369,
+   513
+  ]
+ ],
+ [
+  "no direct phone (fake phone has no listening sockets)",
+  true,
+  ""
+ ],
+ [
+  "UDP discovery finds PC (SHIYIN_FIND_PC → shiyin-pc, port 18522)",
+  true,
+  "DISCOVERED {\"app\": \"shiyin-pc\", \"ip\": \"172.16.13.65\", \"name\": \"(none)\", \"needCode\": true, \"port\": 18522, \"version\": \"0.2.5\"}\n[phone] reverse mode → 127.0.0.1 18522 slots 4\n[phone] handshake refused: E"
+ ],
+ [
+  "wrong code refused (ERR badcode)",
+  true,
+  [
+   3,
+   "65\", \"name\": \"(none)\", \"needCode\": true, \"port\": 18522, \"version\": \"0.2.5\"}\n[phone] reverse mode → 127.0.0.1 18522 slots 4\n[phone] handshake refused: ERR badcode 配对码不对\nHANDSHAKE_ERR ERR badcode 配对码不对\n"
+  ]
+ ],
+ [
+  "reverse: phone library shown automatically",
+  true,
+  "Redmi K70E 的歌曲"
+ ],
+ [
+  "reverse: present counted",
+  true,
+  "5 首 · 电脑上已有 2 首 · 未导入 3 首 · 2 个歌单"
+ ],
+ [
+  "reverse: import finished",
+  true,
+  "完成：新导入 3 首，已有 2 首，同步歌单 2 个"
+ ],
+ [
+  "reverse: files byte-identical",
+  true,
+  ""
+ ],
+ [
+  "reverse: .lrc saved beside song",
+  true,
+  ""
+ ],
+ [
+  "reverse: library grew to 11",
+  true,
+  11
+ ],
+ [
+  "reverse: Chinese names applied",
+  true,
+  [
+   [
+    "冲突测试",
+    "测试歌手"
+   ],
+   [
+    "红豆",
+    "王菲"
+   ],
+   [
+    "晴天",
+    "周杰伦"
+   ],
+   [
+    "Song M4A",
+    "Artist B"
+   ],
+   [
+    "Clash",
+    "未知歌手"
+   ],
+   [
+    "十年",
+    "陈奕迅"
+   ],
+   [
+    "Test Flac",
+    "Band A"
+   ],
+   [
+    "晴天",
+    "周杰伦"
+   ],
+   [
+    "Vorbis Song",
+    "未知歌手"
+   ],
+   [
+    "wavfile",
+    "未知歌手"
+   ],
+   [
+    "作品",
+    "歌手丙"
+   ]
+  ]
+ ],
+ [
+  "reverse: playlist 跑步 (2) + 我喜欢 merged",
+  true,
+  {
+   "我喜欢": 2,
+   "跑步": 2
+  }
+ ],
+ [
+  "reverse: phone served over its own outbound connections (no 401)",
+  true,
+  ""
+ ],
+ [
+  "reverse listener closes after the dialog is closed",
+  true,
+  25
+ ],
+ [
+  "USB: scan reports merged data",
+  true,
+  "已读取手机拾音数据：1 首中文名、1 张封面、2 个歌单"
+ ],
+ [
+  "USB: name override applied",
+  true,
+  [
+   {
+    "id": "9229f34ecc7cb59b",
+    "key": "usb song|24108",
+    "title": "优盘歌",
+    "artist": "优盘歌手",
+    "album": "优盘专辑",
+    "rawTitle": "Vorbis Song",
+    "rawArtist": "",
+    "rawAlbum": "",
+    "duration": 12000,
+    "size": 24108,
+    "fileName": "USB Song.ogg",
+    "path": "/workspace/work/shiyin/拾音源码/电脑版/test/pc/手机拷贝/USB Song.ogg",
+    "ext": "ogg",
+    "added": 1795183799,
+    "cover": true,
+    "cv": 1795183799717
+   }
+  ]
+ ],
+ [
+  "USB: custom cover imported",
+  true,
+  3955
+ ],
+ [
+  "USB: playlist 优盘歌单 created by key",
+  true,
+  {
+   "id": "pldn03joj3v8a81",
+   "name": "优盘歌单",
+   "keys": [
+    "usb song|24108",
+    "eason - ten years|361786",
+    "missing song|123"
+   ],
+   "created": 1795183799
+  }
+ ],
+ [
+  "USB: 我喜欢 merged",
+  true,
+  3
+ ],
+ [
+  "USB: second scan is a no-op (idempotent)",
+  true,
+  null
+ ],
+ [
+  "USB: changed file merged again",
+  true,
+  [
+   "已读取手机拾音数据：1 首中文名、2 个歌单",
+   [
+    {
+     "id": "9229f34ecc7cb59b",
+     "key": "usb song|24108",
+     "title": "优盘歌（改）",
+     "artist": "优盘歌手",
+     "album": "优盘专辑",
+     "rawTitle": "Vorbis Song",
+     "rawArtist": "",
+     "rawAlbum": "",
+     "duration": 12000,
+     "size": 24108,
+     "fileName": "USB Song.ogg",
+     "path": "/workspace/work/shiyin/拾音源码/电脑版/test/pc/手机拷贝/USB Song.ogg",
+     "ext": "ogg",
+     "added": 1795183799,
+     "cover": true,
+     "cv": 1795183799717
+    }
+   ]
+  ]
+ ],
+ [
+  "USB: audio files never modified",
+  true,
+  ""
+ ],
+ [
+  "USB: data file left untouched",
+  true,
+  ""
+ ],
+ [
+  "USB: renamed song visible in UI",
+  true,
+  ""
+ ],
+ [
+  "no JS errors",
+  true,
+  []
+ ]
+]

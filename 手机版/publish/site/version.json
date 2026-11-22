@@ -1,0 +1,7 @@
+{
+  "versionCode": 17,
+  "versionName": "2.3.2",
+  "apk": "myplayer-2.3.2.apk",
+  "notes": "2.3.2：修复浅色主题下打开 App 时闪一下黑屏。",
+  "sha256": "6077996003a833c2cbff7770b229b7e6e610d3a8d440d189ef0fee2e71426488"
+}

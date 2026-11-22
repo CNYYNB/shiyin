@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>拾音 · 下载</title><meta name="description" content="拾音：手机和电脑上的本地音乐播放器">
+<style>
+:root{--bg:#f6f4f0;--card:#fff;--fg:#1d1b18;--mute:#76706a;--acc:#c2553a}
+@media(prefers-color-scheme:dark){:root{--bg:#121110;--card:#1d1b19;--fg:#efeae4;--mute:#9a938b;--acc:#e07a5c}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:560px;margin:0 auto;padding:56px 20px 40px}
+h1{font-size:40px;margin:0;letter-spacing:4px}.sub{color:var(--mute);margin:6px 0 32px}
+.card{background:var(--card);border-radius:18px;padding:22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card h2{margin:0;font-size:20px}.ver{color:var(--mute);font-size:14px;margin:2px 0 12px}
+.notes{white-space:pre-line;font-size:14px;color:var(--mute);margin:0 0 16px}
+a.btn{display:block;text-align:center;background:var(--acc);color:#fff;text-decoration:none;padding:13px;border-radius:12px;font-weight:600}
+footer{color:var(--mute);font-size:13px;text-align:center;margin-top:28px}
+</style></head><body><main>
+<h1>拾音</h1><p class="sub">手机和电脑上的本地音乐播放器，两边可以同步。</p>
+<div class="card"><h2>安卓手机版</h2><p class="ver" id="av">读取中…</p><p class="notes" id="an"></p><a class="btn" id="ab" href="#">下载 APK</a></div>
+<div class="card"><h2>Windows 电脑版</h2><p class="ver" id="pv">读取中…</p><p class="notes" id="pn"></p><a class="btn" id="pb" href="#">下载安装包</a></div>
+<footer>装好后在「设置 → 检查更新」就能升级到新版本。</footer>
+</main><script>
+const mb=n=>(n/1048576).toFixed(1)+' MB';
+fetch('version.json',{cache:'no-store'}).then(r=>r.json()).then(v=>{av.textContent='版本 '+v.versionName;an.textContent=v.notes||'';ab.href=v.apk}).catch(()=>av.textContent='版本信息读取失败');
+fetch('pc-version.json',{cache:'no-store'}).then(r=>r.json()).then(v=>{pv.textContent='版本 '+v.version+(v.size?' · '+mb(v.size):'');pn.textContent=v.notes||'';pb.href=v.setup}).catch(()=>pv.textContent='版本信息读取失败');
+</script></body></html>

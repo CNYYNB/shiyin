@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>拾音</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* 先应用主题，避免启动时闪一下深色/浅色 */(function(){var d=document.documentElement,m=d.getAttribute('data-theme')||'dark';d.classList.toggle('light',m==='light'||(m==='system'&&window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches));})();</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="brand"><svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg><span>拾音</span></div>
+    <nav class="tabs" id="tabs">
+      <button data-tab="songs" class="on">歌曲</button>
+      <button data-tab="albums">专辑</button>
+      <button data-tab="artists">歌手</button>
+      <button data-tab="playlists">歌单</button>
+    </nav>
+    <div class="search"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input id="search" placeholder="搜索歌曲、歌手、专辑" autocomplete="off"><button id="searchClear" class="hidden" title="清除">×</button></div>
+    <button class="btn ghost" id="btnPhone"><svg viewBox="0 0 24 24"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-5 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>从手机导入</button>
+    <button class="icon-btn" id="btnSettings" title="设置"><svg viewBox="0 0 24 24"><path d="M19.14 12.94a7.07 7.07 0 0 0 0-1.88l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54A.48.48 0 0 0 13.92 2h-3.84a.48.48 0 0 0-.48.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.72 8.47a.48.48 0 0 0 .12.61l2.03 1.58a7.07 7.07 0 0 0 0 1.88l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.48.48 0 0 0-.12-.61l-2.03-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/></svg></button>
+  </header>
+
+  <main id="main"></main>
+
+  <section id="player" class="hidden">
+    <button class="icon-btn close" id="playerClose" title="收起"><svg viewBox="0 0 24 24"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></button>
+    <button class="icon-btn more" id="plMore" title="更多"><svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></button>
+    <div class="pl-left">
+      <div class="pl-cover" id="plCover"></div>
+      <div class="pl-title" id="plTitle"></div>
+      <div class="pl-sub" id="plArtist"></div>
+      <div class="pl-sub dim" id="plAlbum"></div>
+    </div>
+    <div class="pl-right">
+      <div class="lyrics" id="lyrics"></div>
+      <div class="lyr-tools"><button class="chip" id="offMinus" title="歌词提前 0.5 秒">−0.5s</button><span class="off" id="offLabel">偏移 0.0s</span><button class="chip" id="offPlus" title="歌词推后 0.5 秒">+0.5s</button><button class="chip" id="offReset" title="清除这首歌的歌词偏移">清除偏移</button><span class="sep"></span><button class="chip" id="lyrSearchBtn">搜索歌词</button></div>
+      <div class="lyr-src" id="lyrSrc"></div>
+    </div>
+  </section>
+
+  <footer id="bar">
+    <div class="np" id="npInfo">
+      <div class="np-cover" id="npCover"></div>
+      <div class="np-text"><div class="np-title" id="npTitle">未在播放</div><div class="np-artist" id="npArtist">选择一首歌开始播放</div></div>
+      <button class="icon-btn heart" id="npFav" title="喜欢"></button>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-btns">
+        <button class="icon-btn" id="btnMode" title="播放模式"></button>
+        <button class="icon-btn" id="btnPrev" title="上一首 (Ctrl+←)"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button class="play-btn" id="btnPlay" title="播放/暂停 (空格)"></button>
+        <button class="icon-btn" id="btnNext" title="下一首 (Ctrl+→)"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+        <button class="icon-btn" id="btnLyr" title="歌词 / 播放页"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg></button>
+      </div>
+      <div class="prog">
+        <span id="tCur">0:00</span>
+        <div class="slider" id="seek"><div class="track"><div class="fill" id="seekFill"></div><div class="knob" id="seekKnob"></div></div></div>
+        <span id="tDur">0:00</span>
+      </div>
+    </div>
+    <div class="vol">
+      <button class="icon-btn txt-btn" id="btnDesk" title="桌面歌词">词</button>
+      <button class="icon-btn" id="btnQueue" title="播放队列"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
+      <button class="icon-btn" id="btnMute" title="静音"></button>
+      <div class="slider small" id="volume"><div class="track"><div class="fill" id="volFill"></div><div class="knob" id="volKnob"></div></div></div>
+    </div>
+  </footer>
+
+  <aside id="queuePanel" class="hidden"></aside>
+</div>
+
+<div id="taskBanner" class="task-banner hidden"><div class="spin"></div><span id="taskText"></span><button class="btn ghost" id="taskCancel" style="height:30px">停止</button></div>
+
+<div id="overlay" class="hidden"></div>
+<div id="menu" class="hidden"></div>
+<div id="toast" class="hidden"></div>
+<input type="file" id="coverFile" accept="image/*" class="hidden">
+<audio id="audio" preload="auto"></audio>
+<script src="t2s.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

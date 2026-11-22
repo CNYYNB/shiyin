@@ -1,0 +1,12 @@
+{
+ "musicDir": "/workspace/work/shiyin/拾音源码/电脑版/test/pc",
+ "extraDirs": [
+  "/tmp/shiyin-extra"
+ ],
+ "t2s": true,
+ "onlineLyrics": true,
+ "scanned": true,
+ "lastPhone": "",
+ "theme": "dark",
+ "autoOrganize": true
+}

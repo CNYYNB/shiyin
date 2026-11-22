@@ -1,0 +1,7 @@
+{
+ "version": "0.3.0",
+ "setup": "shiyin-pc-setup-0.3.0.exe",
+ "size": 3067902,
+ "sha256": "c353521cea6ce62047cc5ebb1feea22578b2a079c2d8e12f937d07cc943db21c",
+ "notes": "拾音电脑版 0.3.0：\n· 支持「驿」手机遥控：能单独识别和控制拾音，不再和 Edge 浏览器混在一起"
+}

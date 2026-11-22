@@ -1,0 +1,17 @@
+{
+ "phone": {},
+ "user": {
+  "artist b - song m4a|147451": {
+   "title": "歌曲甲",
+   "artist": "歌手乙",
+   "album": "专辑乙",
+   "cover": "user_7367d886cda39d06.jpg",
+   "coverV": 1795182886848,
+   "src": "manual"
+  },
+  "eason - ten years|361786": {
+   "cover": "user_1a6b84b9b46bcdb5.jpg",
+   "coverV": 1795182886965
+  }
+ }
+}
