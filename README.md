@@ -1,6 +1,19 @@
+<div align="center">
+
 # 拾音
 
-一个本地音乐播放器，有手机版（Android）和电脑版（Windows）。听的是你自己存的歌，不用登录、没有广告，两边可以在局域网里互传歌曲和歌单。
+**干净的本地音乐播放器 · Android + Windows**
+
+听你自己存的歌：自动找歌词、修乱码歌名和封面，手机和电脑局域网互传。<br>
+免费 · 开源 · 无广告 · 不用登录
+
+[![Release](https://img.shields.io/github/v/release/CNYYNB/shiyin?label=%E4%B8%8B%E8%BD%BD)](https://github.com/CNYYNB/shiyin/releases/latest)
+[![License](https://img.shields.io/github/license/CNYYNB/shiyin)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/CNYYNB/shiyin?style=social)](https://github.com/CNYYNB/shiyin/stargazers)
+
+<img src="docs/screenshots/preview.jpg" alt="拾音截图：歌曲列表、播放页、歌词页" width="100%">
+
+</div>
 
 ## 下载
 
@@ -22,12 +35,6 @@
 - 整理文件夹：把散落在各处的歌移到拾音文件夹，同名同大小的自动跳过
 
 ## 怎么用
-
-!!!重中之重:两个网站基本覆盖中外歌曲音频文件，热歌，小众都可找到，都可免费无损下载音频：
-https://1music.cc/zh-CN
-https://flacdownloader.com/
-警告！！！不可商用，尊重版权拥有者，只能私人用，面向手里比较紧的学生党和刚毕业大学生
-请尊重别人的劳动成果，望君自重！！！
 
 ### 手机版
 1. 从 Releases 下载 APK 安装（手机可能提示「未知来源」，允许即可）。
@@ -73,3 +80,7 @@ https://flacdownloader.com/
 ## 许可证
 
 MIT
+
+---
+
+觉得好用的话，点右上角 ⭐ Star 支持一下，这是我继续更新的最大动力。有问题或想要的功能，欢迎提 [Issue](https://github.com/CNYYNB/shiyin/issues)。
