@@ -24,6 +24,14 @@
 
 安装后「设置 → 检查更新」可以手动更新到作者发布的新版本，不会自己弹窗。
 
+## 电脑版截图
+
+| 歌曲列表 | 歌词 |
+|---|---|
+| <img src="docs/screenshots/pc-songs.jpg" alt="电脑版歌曲列表"> | <img src="docs/screenshots/pc-lyrics.jpg" alt="电脑版歌词"> |
+| **从手机导入（局域网配对）** | **设置** |
+| <img src="docs/screenshots/pc-import.jpg" alt="从手机导入"> | <img src="docs/screenshots/pc-settings.jpg" alt="设置"> |
+
 ## 能做什么
 
 - 播放本地歌曲：mp3、flac、wav、m4a、ogg/opus 等，自动读取标签和封面
